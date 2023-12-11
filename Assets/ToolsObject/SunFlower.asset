@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc4dc5c33c0f1d4595775be0a1a12e2, type: 3}
+  m_Name: SunFlower
+  m_EditorClassIdentifier: 
+  toolName: SunFlower
+  toolSprite: {fileID: 21300000, guid: 332ec284395231c4bb5cf5d65ca42053, type: 3}
+  toolPrice: 10
+  tool_type: 3
+  seedState:
+  - {fileID: -102136469, guid: 5504ff2b9aa94f7469489a2b4223bf05, type: 3}
+  - {fileID: 433611097, guid: 5504ff2b9aa94f7469489a2b4223bf05, type: 3}
+  - {fileID: 820183913, guid: 5504ff2b9aa94f7469489a2b4223bf05, type: 3}
+  - {fileID: 1588362948, guid: 5504ff2b9aa94f7469489a2b4223bf05, type: 3}
+  drySeed: {fileID: -426678354, guid: 1a1ab872316ea884798de97f46cb04b8, type: 3}
+  TimeToGlow: 10
+  Amount: 0
+  amountBuy: 1
+  sellPrice: 15
