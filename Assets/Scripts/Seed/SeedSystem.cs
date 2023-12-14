@@ -62,6 +62,23 @@ public class SeedSystem : MonoBehaviour
     [SerializeField]
     private Slider timeLoad;
 
+    public void BoneActive()
+    {
+        StopAllCoroutines();
+        finishGlow();
+
+    }
+
+    void finishGlow()
+    {
+        spriteRenderer.sprite = seed.seedState[seed.seedState.Length - 1];
+        timeLoad.gameObject.SetActive(false);
+        system.IsHavest = true;
+        onceTiming = false;
+        glowing = false;
+        time.text = "";
+    }
+
     IEnumerator TimingToGlow()
     {
         float t = 0;
@@ -79,13 +96,7 @@ public class SeedSystem : MonoBehaviour
             
         }
 
-        spriteRenderer.sprite = seed.seedState[seed.seedState.Length - 1];
-
-        timeLoad.gameObject.SetActive(false);
-        system.IsHavest = true;
-        onceTiming = false;
-        glowing = false;
-        time.text = "";
+        finishGlow();
 
     }
 

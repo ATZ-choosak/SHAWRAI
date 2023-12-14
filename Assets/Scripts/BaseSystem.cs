@@ -117,6 +117,16 @@ public class BaseSystem : MonoBehaviour
                     }
                     
                 }
+
+                if (ToolsManager.instance.nowTool.tool_type == ToolAsset.toolType.bone)
+                {
+                    if (!IsHavest && ToolsManager.instance.nowTool.Amount > 0)
+                    {
+                        seedPlace.BoneActive();
+                        ToolsManager.instance.nowTool.Amount -= 1;
+                    }
+                    
+                }
             }
         }
     }

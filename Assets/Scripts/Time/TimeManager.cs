@@ -8,13 +8,10 @@ public class TimeManager : MonoBehaviour
     public static TimeManager instance;
 
     [SerializeField]
-    private Color MorningColor, DayColor;
+    private Color NightColor, DayColor , skyColor;
 
     [SerializeField]
-    private float HourInGame = 24.0f, TimeRun = 0 , Hour , Minute , lightValue;
-
-    [SerializeField]
-    private float minLight = 0.2f, maxLight = 1.0f;
+    private float HourInGame = 24.0f, TimeRun = 0 , Hour , Minute;
 
     [SerializeField]
     private Light2D light2d;
@@ -36,9 +33,6 @@ public class TimeManager : MonoBehaviour
         Hour = (TimeRun / 60.0f) % HourInGame;
         Minute = TimeRun % 60.0f;
 
-        lightValue = Hour > 12 ? maxLight - ((Hour - 12 ) / (HourInGame / 2)) : Hour / (HourInGame / 2);
-        light2d.intensity = minLight + lightValue;
-
         setClockDisplay();
         setSkyColor();
        
@@ -47,8 +41,9 @@ public class TimeManager : MonoBehaviour
 
     void setSkyColor()
     {
-        Color sky = Hour > 12 ? Color.Lerp(DayColor, MorningColor, ((Hour - 12) / (HourInGame / 2))) : Color.Lerp(MorningColor, DayColor, Hour / (HourInGame / 2));
-        light2d.color = sky;
+        Color sky = Hour > 12 ? Color.Lerp(skyColor, NightColor, ((Hour - 12) / (HourInGame / 2))) : Color.Lerp(NightColor, skyColor, Hour / (HourInGame / 2));
+        Color light = Hour > 12 ? Color.Lerp(DayColor, NightColor, ((Hour - 12) / (HourInGame / 2))) : Color.Lerp(NightColor, DayColor, Hour / (HourInGame / 2));
+        light2d.color = light;
         cam.backgroundColor = sky;
 
     }

@@ -27,7 +27,7 @@ public class ToolSystem : MonoBehaviour
 
     private void Update()
     {
-        if (tool && tool.tool_type == ToolAsset.toolType.seed)
+        if (tool && (tool.tool_type == ToolAsset.toolType.seed || tool.tool_type == ToolAsset.toolType.bone))
         {
             amount.text = tool.Amount.ToString();
         }

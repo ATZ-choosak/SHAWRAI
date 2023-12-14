@@ -9,7 +9,7 @@ using UnityEngine;
 public class ToolAsset : ScriptableObject
 {
 
-    public enum toolType { preuan, water, havest, seed}
+    public enum toolType { preuan, water, havest, seed , bone}
 
     public string toolName;
     public Sprite toolSprite;
